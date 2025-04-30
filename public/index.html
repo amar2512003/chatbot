@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Chatbox</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts - Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Markdown Parsing Library -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="chat-wrapper">
+      <!-- Chat Header with Status Indicator -->
+      <div class="chat-header">
+        <div class="chat-header-title">
+          <div class="logo-container">
+            <i class="fa-solid fa-robot logo-icon"></i>
+          </div>
+          <div class="title-container">
+            <h1>AI Chatbox</h1>
+            <div class="status-indicator">
+              <span class="status-dot online"></span>
+              <span class="status-text">Online</span>
+            </div>
+          </div>
+        </div>
+        <div class="chat-actions">
+          <button class="action-button theme-toggle" title="Toggle Theme">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+          <button class="action-button clear-chat" title="Clear Chat">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Chat Messages Area -->
+      <div class="chat-container">
+        <div id="chat-box" class="chat-box">
+          <!-- Welcome message -->
+          <div class="chat-welcome">
+            <div class="welcome-icon">
+              <i class="fa-solid fa-comments"></i>
+            </div>
+            <h2>Welcome to AI Chatbox</h2>
+            <p>Enter your name to start a conversation with our AI assistant</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- User Name Form -->
+      <div class="form-container name-form-container">
+        <form id="name-form" class="animated-form">
+          <div class="input-group">
+            <div class="input-icon">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <input 
+              type="text" 
+              id="name-input" 
+              placeholder="Enter your name..." 
+              required 
+              autocomplete="off"
+              class="form-input"
+            />
+          </div>
+          <button type="submit" class="form-button pulse-button">
+            <span class="button-text">Start Chat</span>
+            <i class="fa-solid fa-arrow-right button-icon"></i>
+          </button>
+        </form>
+      </div>
+
+      <!-- Chat Input Form -->
+      <div class="form-container chat-form-container">
+        <form id="chat-form" style="display: none;" class="animated-form">
+          <div class="input-group">
+            <div class="input-icon">
+              <i class="fa-solid fa-message"></i>
+            </div>
+            <input 
+              type="text" 
+              id="user-input" 
+              placeholder="Type your message..." 
+              required 
+              autocomplete="off"
+              class="form-input"
+            />
+          </div>
+          <button type="submit" class="form-button send-button">
+            <span class="button-text">Send</span>
+            <i class="fa-solid fa-paper-plane button-icon"></i>
+          </button>
+        </form>
+      </div>
+
+      <!-- Typing Indicator -->
+      <div class="typing-indicator" style="display: none;">
+        <span class="typing-dot"></span>
+        <span class="typing-dot"></span>
+        <span class="typing-dot"></span>
+        <span class="typing-text">AI is typing...</span>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="chat-footer">
+      <p>© Amar's AI | <a href="#" class="footer-link">Privacy Policy</a></p>
+    </footer>
+  </div>
+
+  <!-- Main Script -->
+  <script src="script.js"></script>
+</body>
+</html>
